@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/desktop.css" />
+</head>
+<body>
+<div class="main">
+    <h1>YouTube playlist parser</h1>
+
+    <div class="playlist-url-ui">
+        <span>Playlist URL: </span>
+        <a id="playlist-url" target="_blank">waiting for proper input...</a>
+    </div>
+
+    <div>
+        Please note that as of the date of writing this app, YouTube only allows to create anonymous playlists of up to 50 videos.
+    </div>
+
+    <div id="vid-id-error" class="warn-ui">
+        Number of youtube video IDs not matching required length: <span id="vid-id-error-num"></span>
+    </div>
+
+    <textarea id="yt-vid-urls" name="yt-vid-urls" placeholder="Paste YouTube links here, each in separate line" autofocus></textarea>
+</div>
+
+<script src="js/init.js"></script>
+
+</body>
+</html>

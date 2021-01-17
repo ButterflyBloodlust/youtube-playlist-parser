@@ -1,0 +1,47 @@
+:root {
+    --primary-font-color: white;
+}
+
+body {
+    background-color: #202225;
+    color: var(--primary-font-color);
+    border-left: 4px solid orange;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    margin: 20px 0;
+}
+
+a {
+    color: #00b0f2;
+}
+a:visited {
+    color: #cb00f2;
+}
+
+textarea {
+    height: 75vh;
+    min-width: 500px;
+    width: 40vw;
+    font-size: 16px;
+    color: var(--primary-font-color);
+    background-color: #141617;
+}
+
+.playlist-url-ui {
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.main {
+    padding: 0 20px;
+}
+
+.warn-ui {
+    color: orange;
+    visibility: hidden;
+}
