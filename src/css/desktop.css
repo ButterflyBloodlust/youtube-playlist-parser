@@ -1,0 +1,63 @@
+:root {
+    --primary-font-color: hsl(0, 0%, 90%);
+}
+
+body {
+    text-align: center;
+    background-color: #202225;
+    color: var(--primary-font-color);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+}
+
+div {
+    margin: 10px 0;
+}
+
+a {
+    color: #00b0f2;
+}
+a:visited {
+    color: #cb00f2;
+}
+
+textarea {
+    height: auto;
+    width: 850px;
+    font-size: 16px;
+    color: var(--primary-font-color);
+    background-color: #141617;
+    flex: 1;
+    margin: 10px auto;
+}
+
+.playlist-url-ui {
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 90vw;
+}
+
+.main {
+    border-top: 4px solid orange;
+    padding: 0 10px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.warn-ui {
+    color: orange;
+    display: none;
+}
+
+@media (max-width: 900px) {
+    textarea {
+        width: 100%;
+    }
+}

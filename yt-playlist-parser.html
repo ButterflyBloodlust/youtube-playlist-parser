@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style>:root{--primary-font-color:hsl(0,0%,90%)}body{text-align:center;background-color:#202225;color:var(--primary-font-color);margin:0;padding:0;height:100vh;display:flex}div{margin:10px 0}a{color:#00b0f2}a:visited{color:#cb00f2}textarea{height:auto;width:850px;font-size:16px;color:var(--primary-font-color);background-color:#141617;flex:1;margin:10px auto}.playlist-url-ui{font-size:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:90vw}.main{border-top:4px solid orange;padding:0 10px;margin:0;display:flex;flex-direction:column;width:100%;align-items:center}.warn-ui{color:orange;display:none}@media (max-width:900px){textarea{width:100%}}</style>
+</head>
+<body>
+<div class="main">
+    <h1>YouTube playlist parser</h1>
+
+    <div class="playlist-url-ui">
+        <span>Playlist URL: </span>
+        <a id="playlist-url" target="_blank">waiting for proper input...</a>
+    </div>
+
+    <div>
+        Please note that as of the date of writing this app, YouTube only allows to create anonymous playlists of up to 50 videos.
+    </div>
+
+    <div id="vid-id-error" class="warn-ui">
+        Number of youtube video IDs not matching required length: <span id="vid-id-error-num"></span>
+    </div>
+
+    <textarea id="yt-vid-urls" name="yt-vid-urls" placeholder="Paste YouTube links here, each in separate line" autofocus></textarea>
+</div>
+
+<script>function f(a){for(var b=/(?:https?:\/\/)?(?:www\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w-_]+)/gmi,c=[],d,e=0;null!==(d=b.exec(a));)d.index===b.lastIndex&&b.lastIndex++,d.forEach(function(g,h){1===h&&(11===g.length?c.push(g):e++)});0<c.length?(a="https://www.youtube.com/watch_videos?video_ids="+c.join(","),document.getElementById("playlist-url").href=a,document.getElementById("playlist-url").text=a):(document.getElementById("playlist-url").text="waiting for proper input...",
+    document.getElementById("playlist-url").removeAttribute("href"));0<e?(document.getElementById("vid-id-error").style.display="unset",document.getElementById("vid-id-error-num").innerText=e):document.getElementById("vid-id-error").style.display="none"}document.getElementById("yt-vid-urls").oninput=function(a){return f(a.target.value)};f(document.getElementsByTagName("textarea")[0].value);</script>
+
+</body>
+</html>
